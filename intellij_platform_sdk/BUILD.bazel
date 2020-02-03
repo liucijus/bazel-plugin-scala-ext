@@ -1,0 +1,234 @@
+alias(
+    name = "application_info_jar",
+    actual = "@bazel_intellij//intellij_platform_sdk:application_info_jar",
+)
+
+alias(
+    name = "application_info_name",
+    actual = "@bazel_intellij//intellij_platform_sdk:application_info_name",
+)
+
+alias(
+    name = "bundled_plugins",
+    actual = "@bazel_intellij//intellij_platform_sdk:bundled_plugins",
+)
+
+config_setting(
+    name = "intellij-latest",
+    values = {
+        "define": "ij_product=intellij-latest",
+    },
+)
+
+config_setting(
+    name = "intellij-latest-mac",
+    values = {
+        "cpu": "darwin_x86_64",
+        "define": "ij_product=intellij-latest",
+    },
+)
+
+config_setting(
+    name = "intellij-ue-latest",
+    values = {
+        "define": "ij_product=intellij-ue-latest",
+    },
+)
+
+config_setting(
+    name = "intellij-ue-latest-mac",
+    values = {
+        "cpu": "darwin_x86_64",
+        "define": "ij_product=intellij-ue-latest",
+    },
+)
+
+config_setting(
+    name = "intellij-beta",
+    values = {
+        "define": "ij_product=intellij-beta",
+    },
+)
+
+config_setting(
+    name = "intellij-ue-beta",
+    values = {
+        "define": "ij_product=intellij-ue-beta",
+    },
+)
+
+config_setting(
+    name = "intellij-canary",
+    values = {
+        "define": "ij_product=intellij-canary",
+    },
+)
+
+config_setting(
+    name = "intellij-ue-canary",
+    values = {
+        "define": "ij_product=intellij-ue-canary",
+    },
+)
+
+config_setting(
+    name = "intellij-2019.2",
+    values = {
+        "define": "ij_product=intellij-2019.2",
+    },
+)
+
+config_setting(
+    name = "intellij-2019.2-mac",
+    values = {
+        "cpu": "darwin_x86_64",
+        "define": "ij_product=intellij-2019.2",
+    },
+)
+
+config_setting(
+    name = "intellij-2019.3",
+    values = {
+        "define": "ij_product=intellij-2019.3",
+    },
+)
+
+config_setting(
+    name = "intellij-2019.3-mac",
+    values = {
+        "cpu": "darwin_x86_64",
+        "define": "ij_product=intellij-2019.3",
+    },
+)
+
+config_setting(
+    name = "intellij-ue-2019.2",
+    values = {
+        "define": "ij_product=intellij-ue-2019.2",
+    },
+)
+
+config_setting(
+    name = "intellij-ue-2019.2-mac",
+    values = {
+        "cpu": "darwin_x86_64",
+        "define": "ij_product=intellij-ue-2019.2",
+    },
+)
+
+config_setting(
+    name = "intellij-ue-2019.3",
+    values = {
+        "define": "ij_product=intellij-ue-2019.3",
+    },
+)
+
+config_setting(
+    name = "intellij-ue-2019.3-mac",
+    values = {
+        "cpu": "darwin_x86_64",
+        "define": "ij_product=intellij-ue-2019.3",
+    },
+)
+
+config_setting(
+    name = "android-studio-latest",
+    values = {
+        "define": "ij_product=android-studio-latest",
+    },
+)
+
+config_setting(
+    name = "android-studio-beta",
+    values = {
+        "define": "ij_product=android-studio-beta",
+    },
+)
+
+config_setting(
+    name = "android-studio-beta-mac",
+    values = {
+        "cpu": "darwin_x86_64",
+        "define": "ij_product=android-studio-beta",
+    },
+)
+
+config_setting(
+    name = "android-studio-canary",
+    values = {
+        "define": "ij_product=android-studio-canary",
+    },
+)
+
+config_setting(
+    name = "android-studio-3.6",
+    values = {
+        "define": "ij_product=android-studio-3.6",
+    },
+)
+
+config_setting(
+    name = "android-studio-3.5",
+    values = {
+        "define": "ij_product=android-studio-3.5",
+    },
+)
+
+config_setting(
+    name = "android-studio-3.5-mac",
+    values = {
+        "cpu": "darwin_x86_64",
+        "define": "ij_product=android-studio-3.5",
+    },
+)
+
+config_setting(
+    name = "android-studio-3.6-mac",
+    values = {
+        "cpu": "darwin_x86_64",
+        "define": "ij_product=android-studio-3.6",
+    },
+)
+
+config_setting(
+    name = "android-studio-4.0",
+    values = {
+        "define": "ij_product=android-studio-4.0",
+    },
+)
+
+config_setting(
+    name = "clion-latest",
+    values = {
+        "define": "ij_product=clion-latest",
+    },
+)
+
+config_setting(
+    name = "clion-latest-mac",
+    values = {
+        "cpu": "darwin_x86_64",
+        "define": "ij_product=clion-latest",
+    },
+)
+
+config_setting(
+    name = "clion-beta",
+    values = {
+        "define": "ij_product=clion-beta",
+    },
+)
+
+config_setting(
+    name = "clion-2019.2",
+    values = {
+        "define": "ij_product=clion-2019.2",
+    },
+)
+
+config_setting(
+    name = "clion-2019.3",
+    values = {
+        "define": "ij_product=clion-2019.3",
+    },
+)

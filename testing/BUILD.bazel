@@ -1,0 +1,4 @@
+alias(
+    name = "lib",
+    actual = "@bazel_intellij//testing:lib",
+)

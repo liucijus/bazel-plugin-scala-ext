@@ -1,0 +1,38 @@
+package(default_visibility = ["//visibility:public"])
+
+java_import(
+    name = "scala",
+    jars = glob(
+        include = ["Scala/lib/*.jar"],
+    ),
+    neverlink = 1,
+)
+
+java_import(
+    name = "scala_library",
+    jars = ["Scala/lib/scala-library.jar"],
+)
+
+java_import(
+    name = "scala_reflect_nolink",
+    jars = ["Scala/lib/scala-reflect.jar"],
+    neverlink = 1,
+)
+
+java_library(
+    name = "scala_sdk_nolink",
+    neverlink = 1,
+    exports = [":scala_library"],
+)
+
+java_import(
+    name = "scala_plugin_for_plugin",
+    jars = glob(
+        include = ["Scala/lib/*.jar"],
+    ),
+)
+
+filegroup(
+    name = "plugin_files",
+    srcs = glob(["Scala/**"])
+)

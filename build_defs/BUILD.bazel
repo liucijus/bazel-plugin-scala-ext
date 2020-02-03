@@ -1,0 +1,9 @@
+alias(
+    name = "api_version_txt",
+    actual = "@bazel_intellij//build_defs:api_version_txt",
+)
+
+alias(
+    name = "stamp_plugin_xml",
+    actual = "@bazel_intellij//build_defs:stamp_plugin_xml",
+)

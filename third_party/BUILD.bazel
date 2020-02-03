@@ -1,0 +1,4 @@
+alias(
+    name = "jpda-jdi",
+    actual = "@bazel_intellij//third_party:jpda-jdi",
+)

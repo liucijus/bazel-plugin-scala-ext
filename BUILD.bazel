@@ -1,0 +1,87 @@
+load(
+    "@bazel_intellij//build_defs:build_defs.bzl",
+    "intellij_plugin",
+    "intellij_plugin_library",
+    "optional_plugin_xml",
+    "plugin_deploy_zip",
+    "repackaged_files",
+    "stamped_plugin_xml",
+)
+load(
+    "@bazel_intellij//build_defs:intellij_plugin_debug_target.bzl",
+    "intellij_plugin_debug_target",
+)
+
+java_library(
+    name = "plugin_resources",
+    resources = glob(
+        include = ["src/main/resources/**"],
+        exclude = ["src/main/resources/META-INF/plugin.xml"],
+    ),
+)
+
+java_library(
+    name = "bazel_plugin_extensions",
+    srcs = glob(["src/main/**/*.java"]),
+    runtime_deps = [":plugin_resources"],
+    deps = [
+        "//plugin_deps:ijwb",
+        "@bazel_intellij//intellij_platform_sdk:plugin_api",
+        "@bazel_intellij//third_party/scala",
+    ],
+)
+
+intellij_plugin_library(
+    name = "plugin_library",
+    plugin_xmls = ["src/main/resources/META-INF/plugin.xml"],
+    deps = [":bazel_plugin_extensions"],
+)
+
+VERSION = "9999"
+
+stamped_plugin_xml(
+    name = "stamped_plugin_xml",
+    changelog_file = "CHANGELOG",
+    description_file = "description.html",
+    plugin_id = "com.wix.intellij.scala",
+    plugin_name = "Bazel Scala Extensions",
+    stamp_since_build = True,
+    stamp_until_build = True,
+    version = VERSION,
+)
+
+filegroup(
+    name = "changelog",
+    srcs = ["CHANGELOG"],
+)
+
+intellij_plugin(
+    name = "bazel_scala_ext_plugin",
+    plugin_xml = ":stamped_plugin_xml",
+    deps = [
+        ":plugin_library",
+    ],
+)
+
+repackaged_files(
+    name = "plugin_jar",
+    srcs = [":bazel_scala_ext_plugin"],
+    prefix = "bazel_scala_ext_plugin/lib",
+)
+
+plugin_deploy_zip(
+    name = "bazel_scala_ext_plugin_zip",
+    srcs = [
+        ":plugin_jar",
+    ],
+    zip_filename = "bazel_scala_ext_plugin.zip",
+)
+
+intellij_plugin_debug_target(
+    name = "plugin_dev",
+    deps = [
+        ":plugin_jar",
+        "//plugin_deps:scala_plugin",
+        "@bazel_intellij//ijwb:ijwb_bazel_dev",
+    ],
+)

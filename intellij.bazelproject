@@ -1,0 +1,17 @@
+directories:
+  .
+
+targets:
+  //:plugin_dev
+  //...
+
+workspace_type: intellij_plugin
+
+build_flags:
+  --define=ij_product=intellij-2019.3
+  --nocheck_visibility
+
+test_sources:
+  src/test/*
+  src/it/*
+

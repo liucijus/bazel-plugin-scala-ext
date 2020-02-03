@@ -1,0 +1,14 @@
+<idea-plugin>
+    <id>com.wix.plugin.scala</id>
+    <name>Bazel Scala Extensions</name>
+    <vendor email="ci@wix.com" url="http://www.wix.com">Wix.com</vendor>
+
+    <depends>org.intellij.scala</depends>
+    <depends>com.google.idea.bazel.ijwb</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <attachSourcesProvider implementation="com.wix.intellij.scala.attachsources.AttachScalaSourcesProvider"/>
+
+        <library.javaSourceRootDetector implementation="com.wix.intellij.scala.attachsources.ScalaRootsDetector"/>
+    </extensions>
+</idea-plugin>
