@@ -1,4 +1,4 @@
-# Wixperiments
+# Intellij IDEA Scala Extensions for Bazel Support 
 ## Features ##
 - Fixes Scala attachment & navigation to Scala sources.
  
