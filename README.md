@@ -16,5 +16,5 @@ Use Bazel:
     
     Import plugin development projectview: `intellij.projectview`
     
-    [Configure and add Intellij SDK ](https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/setting_up_environment.html)
+[Configure and add Intellij SDK](https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/setting_up_environment.html)
  
